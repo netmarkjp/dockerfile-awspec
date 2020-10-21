@@ -16,4 +16,4 @@ RUN apt-get -y update \
 RUN useradd -u 1000 work \
     && echo '#1000 ALL=(ALL:ALL) NOPASSWD:ALL' | tee -a /etc/sudoers
 
-ENTRYPOINT ["bundle", "exec"]
+ENTRYPOINT ["bundle", "exec", "--gemfile=/opt/awspec/Gemfile"]
