@@ -14,6 +14,7 @@ RUN apt-get -y update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 RUN useradd -u 1000 work \
-    && echo '#1000 ALL=(ALL:ALL) NOPASSWD:ALL' | tee -a /etc/sudoers
+    && echo '#1000 ALL=(ALL:ALL) NOPASSWD:ALL' | tee -a /etc/sudoers \
+    && install -d -o work -g work -m 755 /home/work
 
 ENTRYPOINT ["bundle", "exec", "--gemfile=/opt/awspec/Gemfile"]
