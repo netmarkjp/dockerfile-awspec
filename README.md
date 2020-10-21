@@ -11,7 +11,7 @@ docker run --rm -v $(pwd):/mnt -w /mnt -u $(id -u):$(id -g) ghcr.io/netmarkjp/aw
 ## run test
 
 ```bash
-docker run --rm -v $(pwd):/mnt -w /mnt -u $(id -u):$(id -g) ghcr.io/netmarkjp/awspec rake
+docker run --rm -v $(pwd):/mnt -w /mnt -u $(id -u):$(id -g) ghcr.io/netmarkjp/awspec rake spec
 ```
 
 Note:
