@@ -7,5 +7,9 @@ ENV BUNDLE_SILENCE_ROOT_WARNING=0
 RUN mkdir /opt/awspec
 COPY Gemfile Gemfile.lock /opt/awspec/
 RUN cd /opt/awspec && bundle install --jobs=$(nproc)
+RUN apt-get -y update \
+    && apt-get -y install sudo \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["bundle", "exec"]
